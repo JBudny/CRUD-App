@@ -1,0 +1,13 @@
+{
+  "name": "crud-app",
+  "version": "1.0.0",
+  "main": "index.html",
+  "scripts": {
+    "scss": "node-sass --watch scss -o css"
+  },
+  "author": "jbudny8",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "4.4.1"
+  }
+}
