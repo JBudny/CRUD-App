@@ -1,7 +1,50 @@
+@import "variables";
+
 body {
-    padding-top: (4.5rem + 15/16);
+    padding-top: ($pageHeaderHeight + 15/16);
+}
+
+h2 {
+    font-size: 1.5em;
 }
 
 .page-header {
-    box-shadow: 0 0 15px #ced0d0;
+    box-shadow: 0 0 15px $shadowColor;
+}
+
+@media screen and (max-width: $md) {
+    .employees-header {
+        margin-bottom: 15px;
+    }
+    
+    .table-header {
+        display: none;
+    }
+
+    .table-row {
+        border: none;
+        display: block;
+        margin-bottom: 10px;
+        box-shadow: 2px 2px 5px 0px $shadowColor;
+
+        td {
+            border-bottom: 1px solid $shadowColor;
+            display: block;
+            text-align: right;
+            background-color: #FFF;
+            position: relative;
+
+            &:before {
+                content: attr(data-label);
+                position: absolute;
+                left: 12px;
+                display: inline-block;
+                text-transform: uppercase;
+            }
+
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+    }
 }
