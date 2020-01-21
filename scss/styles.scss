@@ -12,6 +12,14 @@ h2 {
     box-shadow: 0 0 15px $shadowColor;
 }
 
+.bigger-font {
+    font-family: "Arial Bold", Gadget, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 0.7;
+    font-size: 2em;
+}
+
 @media screen and (max-width: $md) {
     .employees-header {
         margin-bottom: 15px;
