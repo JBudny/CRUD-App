@@ -8,11 +8,19 @@ h2 {
   box-shadow: 0 0 15px #d0d0d0; }
 
 .bigger-font {
-  font-family: "Arial Bold", Gadget, sans-serif;
+  font-family: 'Arial Bold', Gadget, sans-serif;
   font-style: normal;
   font-weight: bold;
   line-height: 0.7;
   font-size: 2em; }
+
+.alert-slide-out {
+  bottom: 0px;
+  transition: 0.2s linear; }
+
+.alert-slide-in {
+  bottom: -50px;
+  transition: 0.2s linear; }
 
 @media screen and (max-width: 768px) {
   .employees-header {
@@ -28,7 +36,7 @@ h2 {
       border-bottom: 1px solid #d0d0d0;
       display: block;
       text-align: right;
-      background-color: #FFF;
+      background-color: #fff;
       position: relative; }
       .table-row td:before {
         content: attr(data-label);

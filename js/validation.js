@@ -3,14 +3,14 @@ let validationState = [];
 
 formInputs.forEach(input => {
     input.addEventListener('keyup', e => {
-        const addBtn = document.getElementById('submit-employee');
+        const submitBtn = document.getElementById('submit-employee');
         validationResult = validate(input, e, validationState);
 
         if (validationResult) {
-            addBtn.removeAttribute('disabled');
-            addBtn.focus();
+            submitBtn.removeAttribute('disabled');
+            submitBtn.focus();
         } else {
-            addBtn.setAttribute('disabled', 'disabled');
+            submitBtn.setAttribute('disabled', 'disabled');
         }
     });
 });

@@ -1,0 +1,4 @@
+@mixin alert-slide($bottomValue) {
+    bottom: $bottomValue;
+    transition: 0.2s linear;
+  }

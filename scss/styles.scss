@@ -1,4 +1,5 @@
-@import "variables";
+@import 'variables';
+@import 'mixins';
 
 body {
     padding-top: ($pageHeaderHeight + 15/16);
@@ -13,18 +14,26 @@ h2 {
 }
 
 .bigger-font {
-    font-family: "Arial Bold", Gadget, sans-serif;
+    font-family: 'Arial Bold', Gadget, sans-serif;
     font-style: normal;
     font-weight: bold;
     line-height: 0.7;
     font-size: 2em;
 }
 
+.alert-slide-out {
+    @include alert-slide(0px);
+}
+
+.alert-slide-in {
+    @include alert-slide(-50px);
+}
+
 @media screen and (max-width: $md) {
     .employees-header {
         margin-bottom: 15px;
     }
-    
+
     .table-header {
         display: none;
     }
@@ -39,7 +48,7 @@ h2 {
             border-bottom: 1px solid $shadowColor;
             display: block;
             text-align: right;
-            background-color: #FFF;
+            background-color: #fff;
             position: relative;
 
             &:before {

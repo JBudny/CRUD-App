@@ -18,6 +18,6 @@ submitEmployeeBtn.addEventListener('click', e => {
 
     employees.push(newEmployee);
     displayTable();
-
+    showAlert('success', 'Employee added successfully.');
     document.getElementById('add-employee-cancel').click();
 });
