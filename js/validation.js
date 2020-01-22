@@ -8,6 +8,7 @@ formInputs.forEach(input => {
 
         if (validationResult) {
             addBtn.removeAttribute('disabled');
+            addBtn.focus();
         } else {
             addBtn.setAttribute('disabled', 'disabled');
         }

@@ -46,7 +46,7 @@
 
                         <div
                             class="modal fade add-employee-modal"
-                            id="staticBackdrop"
+                            id="add-employee-modal"
                             data-backdrop="static"
                             tabindex="-1"
                             role="dialog"
@@ -62,7 +62,7 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <form>
+                                        <form id="add-employee-form">
                                             <div class="form-group input-group">
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text" id="first-name-addon">
@@ -125,10 +125,15 @@
                                         </form>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                                        <button
+                                            type="button"
+                                            class="btn btn-secondary"
+                                            data-dismiss="modal"
+                                            id="add-employee-cancel"
+                                        >
                                             Cancel
                                         </button>
-                                        <button type="button" class="btn btn-primary" id="submit-employee" disabled>
+                                        <button type="submit" class="btn btn-primary" id="submit-employee" disabled>
                                             Add
                                         </button>
                                     </div>
@@ -144,7 +149,8 @@
                         <thead>
                             <tr class="table-header text-light bg-dark">
                                 <th scope="col">Id</th>
-                                <th scope="col">Name</th>
+                                <th scope="col">First name</th>
+                                <th scope="col">Last name</th>
                                 <th scope="col">E-mail</th>
                             </tr>
                         </thead>
@@ -155,12 +161,14 @@
         </div>
 
         <script src="js/displayTable.js"></script>
+        <script src="js/validation.js"></script>
+        <script src="js/submitEmployee.js"></script>
+        <script src="js/libs/serializeArray.js"></script>
         <script
             src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
             integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
             crossorigin="anonymous"
         ></script>
-        <script src="js/validation.js"></script>
         <script
             src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
             integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
