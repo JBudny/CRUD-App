@@ -29,11 +29,23 @@ const displayTable = () => {
         const values = Object.values(employee);
 
         tr.className = 'table-row';
-        tr.innerHTML = `<td data-label="${keys[0]}" scope="row">${values[0]}</th>
+        tr.innerHTML = `
+                        <button type="button" class="delete-button-top">
+                            <span aria-hidden="true">X</span>
+                        </button>
+                        <td data-label="${keys[0]}">${values[0]}</td>
                         <td data-label="${keys[1]}">${values[1]}</td>
                         <td data-label="${keys[2]}">${values[2]}</td>
                         <td data-label="${keys[3]}">
                             <a href="mailto:${values[3]}">${values[3]}</a>
+                        </td>
+                        <td class="options">
+                            <button type="button" class="btn btn-primary btn-sm edit-button" id="edit-employee">
+                                Edit
+                            </button>
+                            <button type="button" class="btn btn-danger btn-sm delete-button" id="delete-employee">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
                         </td>
                         `;
 

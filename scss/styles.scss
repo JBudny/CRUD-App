@@ -3,30 +3,51 @@
 
 body {
     padding-top: ($pageHeaderHeight + 15/16);
+
+    .page-header {
+        box-shadow: 0 0 15px $shadowColor;
+    }
 }
 
-h2 {
-    font-size: 1.5em;
+.container-lg {
+    h2 {
+        font-size: 1.5em;
+    }
+
+    .bigger-font {
+        font-family: 'Arial Bold', Gadget, sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        line-height: 0.45;
+        font-size: 2em;
+    }
+
+    .alert-slide-out {
+        @include alert-slide(0px);
+    }
+
+    .alert-slide-in {
+        @include alert-slide(-50px);
+    }
 }
 
-.page-header {
-    box-shadow: 0 0 15px $shadowColor;
-}
+tbody {
+    td {
+        padding: 8px !important;
+    }
 
-.bigger-font {
-    font-family: 'Arial Bold', Gadget, sans-serif;
-    font-style: normal;
-    font-weight: bold;
-    line-height: 0.7;
-    font-size: 2em;
-}
+    .options {
+        text-align: center;
+    }
 
-.alert-slide-out {
-    @include alert-slide(0px);
-}
+    .edit-button, .delete-button {
+        width: 35%;
+        line-height: 1em;
+    }
 
-.alert-slide-in {
-    @include alert-slide(-50px);
+    .delete-button-top {
+        display: none;
+    }
 }
 
 @media screen and (max-width: $md) {
@@ -39,24 +60,56 @@ h2 {
     }
 
     .table-row {
-        border: none;
+        @include border-t-lr-radius;
         display: block;
-        margin-bottom: 10px;
-        box-shadow: 2px 2px 5px 0px $shadowColor;
+        border: none;
+        margin-bottom: 20px;
+        box-shadow: 0px 0px 10px 3px $shadowColor;
+
+        .delete-button-top {
+            @include border-t-lr-radius;
+            display: block;
+            border: none;
+            width: 100%;
+            font-size: 1.2em;
+            color: $lightColor;
+            background-color: $darkColor;
+            transition: 0.1s linear;
+
+            &:hover {
+                background-color: adjust-color($darkColor, $lightness: 10%);
+            }
+
+            &:focus {
+                box-shadow: 0 0 0 3px adjust-color($darkColor, $lightness: 45%);
+                outline: 2px dotted transparent;
+                outline-offset: 2px;
+            }
+        }
 
         td {
-            border-bottom: 1px solid $shadowColor;
+            position: relative;
             display: block;
+            border-bottom: 1px solid $shadowColor;
             text-align: right;
             background-color: #fff;
-            position: relative;
+
+            .edit-button {
+                width: 100%;
+                font-size: 1.2em;
+                line-height: 1em;
+            }
+
+            .delete-button {
+                display: none;
+            }
 
             &:before {
-                content: attr(data-label);
                 position: absolute;
-                left: 12px;
                 display: inline-block;
+                left: 12px;
                 text-transform: uppercase;
+                content: attr(data-label);
             }
 
             &:last-child {

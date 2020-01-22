@@ -1,26 +1,38 @@
 body {
   padding-top: 5.4375em; }
+  body .page-header {
+    box-shadow: 0 0 15px #d0d0d0; }
 
-h2 {
+.container-lg h2 {
   font-size: 1.5em; }
 
-.page-header {
-  box-shadow: 0 0 15px #d0d0d0; }
-
-.bigger-font {
+.container-lg .bigger-font {
   font-family: 'Arial Bold', Gadget, sans-serif;
   font-style: normal;
   font-weight: bold;
-  line-height: 0.7;
+  line-height: 0.45;
   font-size: 2em; }
 
-.alert-slide-out {
+.container-lg .alert-slide-out {
   bottom: 0px;
   transition: 0.2s linear; }
 
-.alert-slide-in {
+.container-lg .alert-slide-in {
   bottom: -50px;
   transition: 0.2s linear; }
+
+tbody td {
+  padding: 8px !important; }
+
+tbody .options {
+  text-align: center; }
+
+tbody .edit-button, tbody .delete-button {
+  width: 35%;
+  line-height: 1em; }
+
+tbody .delete-button-top {
+  display: none; }
 
 @media screen and (max-width: 768px) {
   .employees-header {
@@ -28,21 +40,45 @@ h2 {
   .table-header {
     display: none; }
   .table-row {
-    border: none;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
     display: block;
-    margin-bottom: 10px;
-    box-shadow: 2px 2px 5px 0px #d0d0d0; }
-    .table-row td {
-      border-bottom: 1px solid #d0d0d0;
+    border: none;
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 10px 3px #d0d0d0; }
+    .table-row .delete-button-top {
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
       display: block;
+      border: none;
+      width: 100%;
+      font-size: 1.2em;
+      color: #f8f9fa;
+      background-color: #343a40;
+      transition: 0.1s linear; }
+      .table-row .delete-button-top:hover {
+        background-color: #4b545c; }
+      .table-row .delete-button-top:focus {
+        box-shadow: 0 0 0 3px #a4adb5;
+        outline: 2px dotted transparent;
+        outline-offset: 2px; }
+    .table-row td {
+      position: relative;
+      display: block;
+      border-bottom: 1px solid #d0d0d0;
       text-align: right;
-      background-color: #fff;
-      position: relative; }
+      background-color: #fff; }
+      .table-row td .edit-button {
+        width: 100%;
+        font-size: 1.2em;
+        line-height: 1em; }
+      .table-row td .delete-button {
+        display: none; }
       .table-row td:before {
-        content: attr(data-label);
         position: absolute;
-        left: 12px;
         display: inline-block;
-        text-transform: uppercase; }
+        left: 12px;
+        text-transform: uppercase;
+        content: attr(data-label); }
       .table-row td:last-child {
         border-bottom: none; } }
