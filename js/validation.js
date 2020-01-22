@@ -1,5 +1,5 @@
 const formInputs = document.querySelectorAll('form input');
-let validationState = [0, 0, 0];
+let validationState = [];
 
 formInputs.forEach(input => {
     input.addEventListener('keyup', e => {
