@@ -31,9 +31,9 @@ body {
     }
 }
 
-tbody {
+#employees {
     td {
-        padding: 8px !important;
+        padding: 0.5em;
     }
 
     .options {
@@ -59,12 +59,15 @@ tbody {
         display: none;
     }
 
-    .table-row {
+    #employees tr {
         @include border-t-lr-radius;
         display: block;
         border: none;
-        margin-bottom: 20px;
+        height: 15.25em;
+        margin-bottom: 1.25em;
+        background-color: #fff;
         box-shadow: 0px 0px 10px 3px $shadowColor;
+        transition: height 0.2s linear;
 
         .delete-button-top {
             @include border-t-lr-radius;
@@ -74,7 +77,6 @@ tbody {
             font-size: 1.2em;
             color: $lightColor;
             background-color: $darkColor;
-            transition: 0.1s linear;
 
             &:hover {
                 background-color: adjust-color($darkColor, $lightness: 10%);
@@ -116,5 +118,14 @@ tbody {
                 border-bottom: none;
             }
         }
+    }
+
+    #employees .delete-animation {
+        position: relative;
+        z-index: 99999;
+        overflow-y: hidden;
+        height: 0;
+        margin-bottom: 0;
+        box-shadow: none;
     }
 }

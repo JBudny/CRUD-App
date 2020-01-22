@@ -21,17 +21,17 @@ body {
   bottom: -50px;
   transition: 0.2s linear; }
 
-tbody td {
-  padding: 8px !important; }
+#employees td {
+  padding: 0.5em; }
 
-tbody .options {
+#employees .options {
   text-align: center; }
 
-tbody .edit-button, tbody .delete-button {
+#employees .edit-button, #employees .delete-button {
   width: 35%;
   line-height: 1em; }
 
-tbody .delete-button-top {
+#employees .delete-button-top {
   display: none; }
 
 @media screen and (max-width: 768px) {
@@ -39,14 +39,17 @@ tbody .delete-button-top {
     margin-bottom: 15px; }
   .table-header {
     display: none; }
-  .table-row {
+  #employees tr {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     display: block;
     border: none;
-    margin-bottom: 20px;
-    box-shadow: 0px 0px 10px 3px #d0d0d0; }
-    .table-row .delete-button-top {
+    height: 15.25em;
+    margin-bottom: 1.25em;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px 3px #d0d0d0;
+    transition: height 0.2s linear; }
+    #employees tr .delete-button-top {
       border-top-left-radius: 10px;
       border-top-right-radius: 10px;
       display: block;
@@ -54,31 +57,37 @@ tbody .delete-button-top {
       width: 100%;
       font-size: 1.2em;
       color: #f8f9fa;
-      background-color: #343a40;
-      transition: 0.1s linear; }
-      .table-row .delete-button-top:hover {
+      background-color: #343a40; }
+      #employees tr .delete-button-top:hover {
         background-color: #4b545c; }
-      .table-row .delete-button-top:focus {
+      #employees tr .delete-button-top:focus {
         box-shadow: 0 0 0 3px #a4adb5;
         outline: 2px dotted transparent;
         outline-offset: 2px; }
-    .table-row td {
+    #employees tr td {
       position: relative;
       display: block;
       border-bottom: 1px solid #d0d0d0;
       text-align: right;
       background-color: #fff; }
-      .table-row td .edit-button {
+      #employees tr td .edit-button {
         width: 100%;
         font-size: 1.2em;
         line-height: 1em; }
-      .table-row td .delete-button {
+      #employees tr td .delete-button {
         display: none; }
-      .table-row td:before {
+      #employees tr td:before {
         position: absolute;
         display: inline-block;
         left: 12px;
         text-transform: uppercase;
         content: attr(data-label); }
-      .table-row td:last-child {
-        border-bottom: none; } }
+      #employees tr td:last-child {
+        border-bottom: none; }
+  #employees .delete-animation {
+    position: relative;
+    z-index: 99999;
+    overflow-y: hidden;
+    height: 0;
+    margin-bottom: 0;
+    box-shadow: none; } }
