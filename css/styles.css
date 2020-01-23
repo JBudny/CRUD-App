@@ -13,6 +13,9 @@ body {
   line-height: 0.45;
   font-size: 2em; }
 
+.container-lg table th:last-child {
+  text-align: center; }
+
 .container-lg .alert-slide-out {
   bottom: 0px;
   transition: 0.2s linear; }
@@ -27,7 +30,8 @@ body {
 #employees .options {
   text-align: center; }
 
-#employees .edit-button, #employees .delete-button {
+#employees .edit-button,
+#employees .delete-button {
   width: 35%;
   line-height: 1em; }
 
@@ -47,8 +51,8 @@ body {
     height: 15.25em;
     margin-bottom: 1.25em;
     background-color: #fff;
-    box-shadow: 0px 0px 10px 3px #d0d0d0;
-    transition: height 0.2s linear; }
+    box-shadow: 0px 0px 10px 10px #d0d0d0;
+    transition: height 0.2s ease; }
     #employees tr .delete-button-top {
       border-top-left-radius: 10px;
       border-top-right-radius: 10px;
@@ -86,7 +90,6 @@ body {
         border-bottom: none; }
   #employees .delete-animation {
     position: relative;
-    z-index: 99999;
     overflow-y: hidden;
     height: 0;
     margin-bottom: 0;

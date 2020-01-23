@@ -4,7 +4,7 @@ let validationState = [];
 formInputs.forEach(input => {
     input.addEventListener('keyup', e => {
         const submitBtn = document.getElementById('submit-employee');
-        validationResult = validate(input, e, validationState);
+        validationResult = validate(input);
 
         if (validationResult) {
             submitBtn.removeAttribute('disabled');
@@ -34,8 +34,8 @@ const validateName = (input, name) => {
     return false;
 };
 
-const validate = (input, e, validationState) => {
-    const { name, value } = e.target;
+const validate = input => {
+    const { name, value } = input;
 
     switch (name) {
         case 'first-name':
