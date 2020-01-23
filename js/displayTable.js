@@ -41,18 +41,19 @@ const displayTable = () => {
                             <a href="mailto:${values[3]}">${values[3]}</a>
                         </td>
                         <td class="options">
-                            <button data-id="${values[0]}" type="button" class="btn btn-primary btn-sm edit-button" id="edit-employee">
+                            <button data-id="${values[0]}" type="button" class="btn btn-primary btn-sm edit-button">
                                 Edit
                             </button>
-                            <button data-id="${values[0]}" type="button" class="btn btn-danger btn-sm delete-button" id="delete-employee">
+                            <button data-id="${values[0]}" type="button" class="btn btn-danger btn-sm delete-button">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </td>
                         `;
 
         tbody.appendChild(tr);
-        addDeleteButtonHandler(tr);
+        deleteEmployeeButtonHandler(tr);
     });
 };
 
 displayTable();
+addEmployeeButtonHandler();

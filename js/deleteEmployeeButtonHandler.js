@@ -13,7 +13,7 @@ const updateTableAfterAnimation = () => {
     }, 200);
 };
 
-const addDeleteButtonHandler = element => {
+const deleteEmployeeButtonHandler = element => {
     const deleteButtons = element.querySelectorAll('.delete-button, .delete-button-top');
 
     deleteButtons.forEach(deleteButton => {
