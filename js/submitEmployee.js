@@ -1,5 +1,19 @@
 const submitEmployeeBtn = document.getElementById('submit-employee');
 
+const saveEmployee = employee => {
+    const employeeIndex = employees.indexOf(editingModeData.employee);
+    employee.id = employees[employeeIndex].id;
+    employees[employeeIndex] = employee;
+    displayTable();
+    showAlert('success', 'Employee edited successfully.');
+};
+
+const addEmployee = employee => {
+    employees.push(employee);
+    displayTable();
+    showAlert('success', 'Employee added successfully.');
+};
+
 submitEmployeeBtn.addEventListener('click', e => {
     e.preventDefault();
 
@@ -18,8 +32,11 @@ submitEmployeeBtn.addEventListener('click', e => {
         email: formData[2].value,
     };
 
-    employees.push(newEmployee);
-    displayTable();
-    showAlert('success', 'Employee added successfully.');
+    if (editingModeData.enabled) {
+        saveEmployee(newEmployee);
+    } else {
+        addEmployee(newEmployee);
+    }
+
     document.getElementById('add-employee-cancel').click();
 });

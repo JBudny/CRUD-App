@@ -52,8 +52,10 @@ const displayTable = () => {
 
         tbody.appendChild(tr);
         deleteEmployeeButtonHandler(tr);
+        editEmployeeButtonHandler(tr);
     });
 };
 
 displayTable();
 addEmployeeButtonHandler();
+turnOffEditingModeHandler();

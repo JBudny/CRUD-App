@@ -8,7 +8,7 @@ formInputs.forEach(input => {
 
         if (validationResult) {
             submitBtn.removeAttribute('disabled');
-            submitBtn.focus();
+            if (e.keyCode === 13) submitBtn.click();
         } else {
             submitBtn.setAttribute('disabled', 'disabled');
         }

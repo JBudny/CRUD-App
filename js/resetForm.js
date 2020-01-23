@@ -1,6 +1,5 @@
-const resetForm = formId => {
-    const formElement = document.getElementById(formId);
-    const formInputs = document.querySelectorAll(`#${formId} input`);
+const resetForm = (formElement, formInputs) => {
+    formInputs.forEach(formInput => formInput.setAttribute('value', ''));
 
     if (formElement) {
         formElement.reset();
@@ -9,15 +8,8 @@ const resetForm = formId => {
             input.classList.remove('is-valid');
             input.classList.remove('is-invalid');
         });
+
+        validationState = [0, 0, 0];
+        submitEmployeeBtn.setAttribute('disabled', 'disabled');
     }
 };
-
-const addEmployeeBtn = document.getElementById('add-employee-button');
-
-addEmployeeBtn.addEventListener('click', e => {
-    const formId = e.currentTarget.getAttribute('form');
-    resetForm(formId);
-
-    validationState = [0, 0, 0];
-    submitEmployeeBtn.setAttribute('disabled', 'disabled');
-});
