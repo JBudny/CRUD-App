@@ -1,23 +1,9 @@
 const formInputs = document.querySelectorAll('form input');
 let validationState = [];
 
-formInputs.forEach(input => {
-    input.addEventListener('keyup', e => {
-        const submitBtn = document.getElementById('submit-employee');
-        validationResult = validate(input);
-
-        if (validationResult) {
-            submitBtn.removeAttribute('disabled');
-            if (e.keyCode === 13) submitBtn.click();
-        } else {
-            submitBtn.setAttribute('disabled', 'disabled');
-        }
-    });
-});
-
 const validateEmail = (input, email) => {
     const emailReg = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    
+
     if (emailReg.test(email)) {
         input.className = 'form-control is-valid';
         return true;
@@ -52,3 +38,17 @@ const validate = input => {
 
     return validationState.every(el => el);
 };
+
+formInputs.forEach(input => {
+    input.addEventListener('keyup', e => {
+        const submitBtn = document.getElementById('submit-employee');
+        validationResult = validate(input);
+
+        if (validationResult) {
+            submitBtn.removeAttribute('disabled');
+            if (e.keyCode === 13) submitBtn.click();
+        } else {
+            submitBtn.setAttribute('disabled', 'disabled');
+        }
+    });
+});

@@ -11,7 +11,7 @@ const addEmployeeButtonHandler = () => {
         const formInputs = formElement.querySelectorAll('input');
         resetForm(formElement, formInputs);
 
-        if (editingModeData.enabled === true) {
+        if (editingModeData.enabled) {
             fillInputs(formInputs, editingModeData);
             changeModalUi('Edit Employee', 'Save');
             formInputs.forEach(input => validate(input));
