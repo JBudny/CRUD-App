@@ -22,5 +22,5 @@ const showAlert = (type, message) => {
     alert.classList.remove('alert-slide-in');
     alert.classList.add('alert-slide-out');
 
-    window.setTimeout(() => closeAlert(alert.querySelector(':scope > button')), 2000);
+    window.setTimeout(() => closeAlert(alert.querySelector(':scope > button')), 3000);
 };

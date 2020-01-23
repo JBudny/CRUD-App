@@ -17,6 +17,7 @@ formInputs.forEach(input => {
 
 const validateEmail = (input, email) => {
     const emailReg = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    
     if (emailReg.test(email)) {
         input.className = 'form-control is-valid';
         return true;
