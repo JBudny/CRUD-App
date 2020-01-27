@@ -2,82 +2,81 @@ body {
   padding-top: 5.4375em; }
   body .page-header {
     box-shadow: 0 0 15px #d0d0d0; }
+  body .alert-slide-out {
+    bottom: 0px;
+    -webkit-transition: 0.2s linear;
+    transition: 0.2s linear; }
+  body .alert-slide-in {
+    bottom: -50px;
+    -webkit-transition: 0.2s linear;
+    transition: 0.2s linear; }
 
 .container-lg h2 {
   font-size: 1.5em; }
 
+.container-lg .table-title-left {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%; }
+
+.container-lg .table-title-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%; }
+
 .container-lg .bigger-font {
   font-family: 'Arial Bold', Gadget, sans-serif;
-  font-style: normal;
-  font-weight: bold;
+  font-size: 2em;
   line-height: 0.45;
-  font-size: 2em; }
+  font-weight: 700;
+  font-style: normal; }
 
 .container-lg table th:last-child {
   text-align: center; }
 
-.container-lg .alert-slide-out {
-  bottom: 0px;
-  transition: 0.2s linear; }
-
-.container-lg .alert-slide-in {
-  bottom: -50px;
-  transition: 0.2s linear; }
-
 #employees td {
-  padding: 0.5em; }
+  padding: 0.625em; }
 
 #employees .options {
-  text-align: center; }
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly; }
 
 #employees .edit-button,
 #employees .delete-button {
-  width: 35%;
+  width: auto;
   line-height: 1em; }
 
-#employees .delete-button-top {
+#employees .card-delete-button {
   display: none; }
 
 @media screen and (max-width: 768px) {
-  .employees-header {
-    margin-bottom: 15px; }
   .table-header {
     display: none; }
   #employees tr {
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    display: block;
+    border-top-left-radius: 0.62rem;
+    border-top-right-radius: 0.62rem;
     border: none;
-    height: 15.25em;
+    border-bottom-left-radius: 0.2rem;
+    border-bottom-right-radius: 0.2rem;
+    border: none;
+    display: block;
+    height: 13.93375em;
     margin-bottom: 1.25em;
     background-color: #fff;
     box-shadow: 0px 0px 10px 10px #d0d0d0;
+    -webkit-transition: height 0.2s ease;
     transition: height 0.2s ease; }
-    #employees tr .delete-button-top {
-      border-top-left-radius: 10px;
-      border-top-right-radius: 10px;
-      display: block;
-      border: none;
-      width: 100%;
-      font-size: 1.2em;
-      color: #f8f9fa;
-      background-color: #343a40; }
-      #employees tr .delete-button-top:hover {
-        background-color: #4b545c; }
-      #employees tr .delete-button-top:focus {
-        box-shadow: 0 0 0 3px #a4adb5;
-        outline: 2px dotted transparent;
-        outline-offset: 2px; }
     #employees tr td {
       position: relative;
-      display: block;
+      display: flex;
+      height: 2.65em;
+      align-items: center;
+      justify-content: flex-end;
       border-bottom: 1px solid #d0d0d0;
-      text-align: right;
       background-color: #fff; }
-      #employees tr td .edit-button {
-        width: 100%;
-        font-size: 1.2em;
-        line-height: 1em; }
       #employees tr td .delete-button {
         display: none; }
       #employees tr td:before {
@@ -86,11 +85,38 @@ body {
         left: 12px;
         text-transform: uppercase;
         content: attr(data-label); }
-      #employees tr td:last-child {
+      #employees tr td:nth-last-child(2) {
         border-bottom: none; }
+    #employees tr .card-delete-button {
+      border-top-left-radius: 0.62rem;
+      border-top-right-radius: 0.62rem;
+      border: none;
+      display: block;
+      height: auto;
+      padding: 0; }
+      #employees tr .card-delete-button button {
+        border-top-left-radius: 0.62rem;
+        border-top-right-radius: 0.62rem;
+        border: none;
+        width: 100%;
+        height: auto;
+        font-size: 1.2em;
+        line-height: 1;
+        border: none; }
+    #employees tr td.options {
+      border-bottom-left-radius: 3px;
+      border-bottom-right-radius: 3px;
+      border: none;
+      height: auto;
+      padding: 0; }
+      #employees tr td.options button {
+        width: 100%;
+        height: auto;
+        font-size: 1.2em;
+        line-height: 1;
+        border: none; }
   #employees .delete-animation {
-    position: relative;
-    overflow-y: hidden;
     height: 0;
     margin-bottom: 0;
+    overflow-y: hidden;
     box-shadow: none; } }

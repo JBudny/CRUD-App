@@ -7,24 +7,6 @@ body {
     .page-header {
         box-shadow: 0 0 15px $shadowColor;
     }
-}
-
-.container-lg {
-    h2 {
-        font-size: 1.5em;
-    }
-
-    .bigger-font {
-        font-family: 'Arial Bold', Gadget, sans-serif;
-        font-style: normal;
-        font-weight: bold;
-        line-height: 0.45;
-        font-size: 2em;
-    }
-
-    table th:last-child {
-        text-align: center;
-    }
 
     .alert-slide-out {
         @include alert-slide(0px);
@@ -35,78 +17,78 @@ body {
     }
 }
 
+.container-lg {
+    h2 {
+        font-size: 1.5em;
+    }
+
+    .table-title-left {
+        @include table-title-row(flex-start);
+    }
+
+    .table-title-right {
+        @include table-title-row(flex-end);
+    }
+
+    .bigger-font {
+        font-family: 'Arial Bold', Gadget, sans-serif;
+        font-size: 2em;
+        line-height: 0.45;
+        font-weight: 700;
+        font-style: normal;
+    }
+
+    table th:last-child {
+        text-align: center;
+    }
+}
+
 #employees {
     td {
-        padding: 0.5em;
+        padding: 0.625em;
     }
 
     .options {
-        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
     }
 
     .edit-button,
     .delete-button {
-        width: 35%;
+        width: auto;
         line-height: 1em;
     }
 
-    .delete-button-top {
+    .card-delete-button {
         display: none;
     }
 }
 
 @media screen and (max-width: $md) {
-    .employees-header {
-        margin-bottom: 15px;
-    }
-
     .table-header {
         display: none;
     }
 
     #employees tr {
-        @include border-t-lr-radius;
+        @include border-lr-radius(top, 0.62rem);
+        @include border-lr-radius(bottom, 0.2rem);
         display: block;
-        border: none;
-        height: 15.25em;
+        height: 13.93375em;
         margin-bottom: 1.25em;
         background-color: #fff;
         box-shadow: 0px 0px 10px 10px $shadowColor;
         -webkit-transition: height 0.2s ease;
         transition: height 0.2s ease;
 
-        .delete-button-top {
-            @include border-t-lr-radius;
-            display: block;
-            border: none;
-            width: 100%;
-            font-size: 1.2em;
-            color: $lightColor;
-            background-color: $darkColor;
-
-            &:hover {
-                background-color: adjust-color($darkColor, $lightness: 10%);
-            }
-
-            &:focus {
-                box-shadow: 0 0 0 3px adjust-color($darkColor, $lightness: 45%);
-                outline: 2px dotted transparent;
-                outline-offset: 2px;
-            }
-        }
-
         td {
             position: relative;
-            display: block;
+            display: flex;
+            height: 2.65em;
+            align-items: center;
+            justify-content: flex-end;
             border-bottom: 1px solid $shadowColor;
-            text-align: right;
             background-color: #fff;
-
-            .edit-button {
-                width: 100%;
-                font-size: 1.2em;
-                line-height: 1em;
-            }
 
             .delete-button {
                 display: none;
@@ -120,17 +102,38 @@ body {
                 content: attr(data-label);
             }
 
-            &:last-child {
+            &:nth-last-child(2) {
                 border-bottom: none;
+            }
+        }
+
+        .card-delete-button {
+            @include border-lr-radius(top, 0.62rem);
+            display: block;
+            height: auto;
+            padding: 0;
+
+            button {
+                @include border-lr-radius(top, 0.62rem);
+                @include card-button;
+            }
+        }
+
+        td.options {
+            @include border-lr-radius(bottom, 3px);
+            height: auto;
+            padding: 0;
+
+            button {
+                @include card-button;
             }
         }
     }
 
     #employees .delete-animation {
-        position: relative;
-        overflow-y: hidden;
         height: 0;
         margin-bottom: 0;
+        overflow-y: hidden;
         box-shadow: none;
     }
 }

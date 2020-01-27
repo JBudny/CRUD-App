@@ -2,9 +2,25 @@
     bottom: $bottomValue;
     -webkit-transition: 0.2s linear;
     transition: 0.2s linear;
-  }
+}
 
-@mixin border-t-lr-radius {
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+@mixin border-lr-radius($direction, $value) {
+    border-#{$direction}-left-radius: $value;
+    border-#{$direction}-right-radius: $value;
+    border: none;
+}
+
+@mixin card-button {
+    width: 100%;
+    height: auto;
+    font-size: 1.2em;
+    line-height: 1;
+    border: none;
+}
+
+@mixin table-title-row($justifyContent) {
+    display: flex;
+    align-items: center;
+    justify-content: $justifyContent;
+    height: 100%;
 }

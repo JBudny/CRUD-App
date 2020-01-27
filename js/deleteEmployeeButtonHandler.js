@@ -14,7 +14,7 @@ const updateTableAfterAnimation = () => {
 };
 
 const deleteEmployeeButtonHandler = element => {
-    const deleteButtons = element.querySelectorAll('.delete-button, .delete-button-top');
+    const deleteButtons = element.querySelectorAll('.delete-button, .card-delete-button');
 
     deleteButtons.forEach(deleteButton => {
         deleteButton.addEventListener('click', e => {

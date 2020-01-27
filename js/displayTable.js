@@ -30,10 +30,12 @@ const displayTable = () => {
 
         tr.className = 'table-row';
         tr.setAttribute('data-id', values[0]);
-        tr.innerHTML = `
-                        <button data-id="${values[0]}" type="button" class="delete-button-top">
-                            <span aria-hidden="true">X</span>
-                        </button>
+        tr.innerHTML = `<tr>
+                        <td data-id="${values[0]}" aria-label="Delete" class="card-delete-button">
+                            <button type="button" class="btn btn-dark btn-sm">
+                                <span aria-hidden="true">X</span>
+                            </button>
+                        </td>
                         <td data-label="${keys[0]}">${values[0]}</td>
                         <td data-label="${keys[1]}">${values[1]}</td>
                         <td data-label="${keys[2]}">${values[2]}</td>
@@ -42,12 +44,14 @@ const displayTable = () => {
                         </td>
                         <td class="options">
                             <button data-id="${values[0]}" type="button" class="btn btn-primary btn-sm edit-button">
-                                Edit
+                                <span>Edit</span>
                             </button>
-                            <button data-id="${values[0]}" type="button" class="btn btn-danger btn-sm delete-button">
+                            <button data-id="${values[0]}" type="button" class="btn btn-danger btn-sm delete-button"
+                            aria-label="Delete">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </td>
+                        </tr>
                         `;
 
         tbody.appendChild(tr);
