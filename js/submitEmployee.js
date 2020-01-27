@@ -20,8 +20,8 @@ submitEmployeeBtn.addEventListener('click', e => {
     const tableRows = document.getElementsByTagName('tr');
     const lastTableRow = tableRows[tableRows.length - 1];
     let lastEmployeeId = 0;
-    if (lastTableRow.getElementsByTagName('td')[0])
-        lastEmployeeId = Number(lastTableRow.getElementsByTagName('td')[0].innerHTML);
+    if (lastTableRow.getAttribute('data-id'))
+        lastEmployeeId = Number(lastTableRow.getAttribute('data-id'));
     const addEmployeeForm = document.getElementById('add-employee-form');
     const formData = serializeArray(addEmployeeForm);
 
